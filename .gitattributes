@@ -1,0 +1,18 @@
+# Normalize line endings: let Git decide text vs binary, checkout native EOL.
+* text=auto
+
+# The Maven wrapper shell script MUST use LF or it breaks on Unix/CI runners.
+mvnw text eol=lf
+
+# Windows batch scripts should keep CRLF.
+*.cmd text eol=crlf
+
+# Java sources are text.
+*.java text
+*.xml text
+*.md text
+*.yml text
+*.properties text
+
+# Archives are binary.
+*.jar binary
