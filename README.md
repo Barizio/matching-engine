@@ -1,5 +1,7 @@
 # Matching Engine
 
+[![CI](https://github.com/Barizio/matching-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/Barizio/matching-engine/actions/workflows/ci.yml)
+
 A production-quality **limit order-book matching engine** in Java 21, implementing
 strict **price-time priority** (FIFO within each price level) for a single
 instrument. It supports limit and market orders on both sides, partial fills,
@@ -120,11 +122,14 @@ src/test/java/com/adebare/matchingengine/
 
 ## Build, run, test
 
-Requires **JDK 21** and **Maven**.
+Requires **JDK 21**. Maven is optional: the repo ships a **Maven wrapper**
+(`./mvnw`, or `mvnw.cmd` on Windows) that downloads the pinned Maven version on
+first use, so you can build without installing Maven yourself. Substitute `mvn`
+for `./mvnw` below if you have Maven installed.
 
 ```bash
 # Run the full test suite
-mvn test
+./mvnw test
 
 # Build the jar
 mvn -q package
